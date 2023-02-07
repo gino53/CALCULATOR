@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" type="image/svg+xml" href="favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<title>YU-NUM</title>
+</head>
+
+<body>
+	<header>
+		<div class="right">
+			<span class="material-symbols-outlined theme_btn" id="light_btn">light_mode</span>
+			<span class="material-symbols-outlined theme_btn" id="forest_btn">forest</span>
+			<span class="material-symbols-outlined theme_btn" id="dark_btn">dark_mode</span>
+		</div>
+		<div id="text_anime">
+			<h1 class="top">
+				<span>C</span>
+				<span>A</span>
+				<span>L</span>
+				<span>C</span>
+				<span>U</span>
+				<span>L</span>
+				<span>A</span>
+				<span>T</span>
+				<span>O</span>
+				<span>R</span>
+			</h1>
+		</div>
+	</header>
+	<section id="app">
+		<nav>
+			<button id="calculator_btn">
+				<h2>Calculator</h2>
+			</button>
+			<button id="converter_btn">
+				<h2>Converter</h2>
+			</button>
+		</nav>
+		<section class="enabled" id="calculator">
+			<form class="bottom" id="container_calculator" name="calc">
+				<input type="text" id="value" name="txt" placeholder="0">
+				<span class="touch" id="clear" onclick="calc.txt.value=''"><i>C</i>
+					<h4 class="touch_text">Delete</h4>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='/'"><i>/</i>
+					<h4 class="touch_text">Divided</h4>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='*'"><i>x</i>
+					<h4 class="touch_text">Multiply</h4>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='7'"><i>7</i>
+					<h4 class="touch_text">Seven</h4>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='8'"><i>8</i>
+					<h4 class="touch_text">Eight</h4>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='9'"><i>9</i>
+					<h4 class="touch_text">Nine</h4>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='-'"><i>-</i>
+					<h4 class="touch_text">Minus</h4>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='4'"><i>4</i>
+					<h4 class="touch_text">Four</h4>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='5'"><i>5</i>
+					<h4 class="touch_text">Five</h4>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='6'"><i>6</i>
+					<h4 class="touch_text">Six</h4>
+				</span>
+				<span class="touch" id="plus" onclick="calc.txt.value+='+'"><i>+</i>
+					<h4 class="touch_text">Plus</h4>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='1'"><i>1</i>
+					<h4 class="touch_text">One</h4>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='2'"><i>2</i>
+					<h4 class="touch_text">Two</h4>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='3'"><i>3</i>
+					<h4 class="touch_text">Three</h4>
+				</span>
+				<span class="touch" id="equal" onclick="document.calc.txt.value=eval(calc.txt.value)"><i>=</i>
+					<h4 class="touch_text">Equal</h4>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='0'"><i>0</i>
+					<h4 class="touch_text">Zero</h4>
+				</span>
+				<span class="touch" id="container_brackets">
+					<i id="icon_brackets">( )</i>
+					<h4 id="text_brackets">Brackets</h4>
+					<div id="content_brackets">
+						<span class="bracket" onclick="calc.txt.value+='('"><i>(</i></span>
+						<span id="separation"></span>
+						<span class="bracket" onclick="calc.txt.value+=')'"><i>)</i></span>
+					</div>
+				</span>
+				<span class="touch" onclick="calc.txt.value+='.'"><i>.</i>
+					<h4 class="touch_text">Point</h4>
+				</span>
+			</form>
+		</section>
+		<section class="disabled" id="converter">
+			<div class="input">
+				<input type="text" id="pxInput">
+				<span>px</span>
+			</div>
+			<div class="input">
+				<input type="text" id="remInput">
+				<span>rem|em</span>
+			</div>
+			<div class="input">
+				<input type="text" id="percentInput">
+				<span>%</span>
+			</div>
+		</section>
+	</section>
+</body>
+
+<script src="/js/theme.js"></script>
+<script src="/js/animation.js"></script>
+<script src="/js/anime-master/lib/anime.min.js"></script>
+<script>
+	let parent = document.getElementById('container_brackets');
+	parent.onclick = function () {
+		parent.classList.toggle('active')
+	}
+</script>
+
+<style>
+	.material-symbols-outlined {
+		font-size: 36px;
+	}
+</style>
+
+</html>

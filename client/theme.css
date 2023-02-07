@@ -1,0 +1,189 @@
+/*=============== BTN ===============*/
+
+.theme_btn {
+  width: 42px;
+  height: 42px;
+  margin: 0.5rem;
+  padding-top: 0.25rem;
+  border-radius: 1rem;
+  background-color: #3c3158;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#light_btn {
+  color: #d88c9a;
+  animation: sun 5s infinite linear;
+}
+
+#light_btn:hover {
+  box-shadow: #f1e3d3 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+#forest_btn {
+  color: #2c6525b5;
+  animation: forest 5s infinite linear;
+}
+
+#forest_btn:hover {
+  box-shadow: #f1e3d3 0 -1px 4px, rgb(38, 202, 1) 0 -2px 10px, #99ef71 0 -10px 20px, rgba(0, 183, 22, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+#dark_btn {
+  color: #b4abee;
+  animation: moon 5s infinite linear;
+}
+
+#dark_btn:hover {
+  box-shadow: #f1e3d3 0 -1px 4px, rgb(177, 176, 178) 0 -2px 10px, #afafaf 0 -10px 20px, rgba(70, 59, 226, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+/*=============== LIGHT MODE ===============*/
+
+body.light {
+  background-color: #f2d0a9;
+}
+
+body.light header {
+  background-color: #d88c9a;
+}
+
+body.light .theme_btn {
+  background-color: #f2d0a9;
+}
+
+body.light #text_anime h1 {
+  color: #333;
+}
+
+body.light nav {
+  background-color: #d88c9a;
+}
+
+body.light nav::before {
+  background-color: #f2d0a9;
+}
+
+body.light #calculator_btn,
+body.light #converter_btn {
+  background-color: #f2d0a9;
+  color: #333;
+}
+
+body.light #container_calculator {
+  background-color: #d88c9a;
+}
+
+body.light #value {
+  color: #333;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.75);
+}
+
+body.light ::placeholder {
+  color: #333;
+}
+
+body.light ::selection {
+  background-color: rgba(78, 76, 76, 0.3);
+}
+
+body.light .touch {
+  color: #333;
+}
+
+body.light #clear,
+body.light #equal {
+  color: #fff;
+}
+
+body.light #separation {
+  background-color: #333;
+}
+
+/*=============== FOREST MODE ===============*/
+
+body.forest {
+  background-color: #99c1b9;
+}
+
+body.forest header {
+  background-color: #2c6525b5;
+}
+
+body.forest .theme_btn {
+  background-color: #99c1b9;
+}
+
+body.forest nav {
+  background-color: #2c6525b5;
+}
+
+body.forest nav::before {
+  background-color: #99c1b9;
+}
+
+body.forest #calculator_btn,
+body.forest #converter_btn {
+  background-color: #99c1b9;
+}
+
+body.forest #container_calculator {
+  background-color: #2c6525b5;
+}
+
+/*=============== ANIMATION ===============*/
+
+@keyframes sun {
+  10% {
+    color: #df1a00;
+  }
+
+  35% {
+    color: #d88c9a;
+  }
+
+  70% {
+    color: #df1a00;
+  }
+
+  100% {
+    color: #d88c9a;
+  }
+}
+
+@keyframes forest {
+  5% {
+    color: #04b849;
+  }
+
+  35% {
+    color: #2c6525b5;
+  }
+
+  70% {
+    color: #04b849;
+  }
+
+  99% {
+    color: #2c6525b5;
+  }
+}
+
+@keyframes moon {
+  5% {
+    color: #f0f0f0;
+  }
+
+  35% {
+    color: #b4abee;
+  }
+
+  70% {
+    color: #f0f0f0;
+  }
+
+  99% {
+    color: #b4abee;
+  }
+}
