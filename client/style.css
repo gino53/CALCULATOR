@@ -20,11 +20,21 @@ body {
   transition: 0.5s;
 }
 
+::placeholder {
+  color: #f1e3d3;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+
+::selection {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 /*=============== ENABLED DISABLED ===============*/
 
 #calculator.enabled,
 #converter.enabled {
-  opacity: 1;
+  display: flex;
 }
 
 #calculator.disabled,
@@ -76,6 +86,11 @@ header {
   height: 100vh;
 }
 
+#calculator,
+#converter {
+  margin: auto;
+}
+
 nav {
   position: relative;
   display: flex;
@@ -99,12 +114,6 @@ nav::before {
   background-color: #3c3158;
   transition: 0.5s;
   z-index: 1;
-}
-
-#calculator,
-#converter {
-  margin: auto;
-  opacity: 0;
 }
 
 /*=============== ANIME TEXT ===============*/
@@ -155,16 +164,6 @@ nav::before {
   font-size: 2em;
   transition: 0.5s;
   transition-delay: 0.5s;
-}
-
-::placeholder {
-  color: #f1e3d3;
-  transition: 0.5s;
-  transition-delay: 0.5s;
-}
-
-::selection {
-  background-color: rgba(255, 255, 255, 0.3);
 }
 
 /*=============== TOUCH ===============*/
@@ -282,6 +281,36 @@ nav::before {
   transition-delay: 0.5s;
 }
 
+/*=============== CONVERTER ===============*/
+
+#container_converter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.converter_content {
+  position: relative;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #8e7dbe;
+  color: #f1e3d3;
+  text-align: right;
+  font-size: 2em;
+}
+
+.converter_content input {
+  background-color: #8e7dbe;
+  color: #f1e3d3;
+  font-size: 1em;
+}
+
+.converter_content span {
+  position: absolute;
+  right: 1rem;
+  vertical-align: middle;
+}
+
 /*=============== MEDIA SCREEN ===============*/
 
 @media screen and (max-width: 1024px) {
@@ -321,21 +350,4 @@ nav::before {
   #content_brackets {
     margin-top: -130px;
   }
-}
-
-#converter {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-input {
-  padding: 1rem;
-  background-color: #df9100;
-}
-
-.input {
-  width: 50%;
-  margin-top: 1rem;
-  background-color: #df9100;
 }

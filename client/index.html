@@ -46,54 +46,54 @@
 			</button>
 		</nav>
 		<section class="enabled" id="calculator">
-			<form class="bottom" id="container_calculator" name="calc">
+			<form id="container_calculator" name="calc">
 				<input type="text" id="value" name="txt" placeholder="0">
 				<span class="touch" id="clear" onclick="calc.txt.value=''"><i>C</i>
 					<h4 class="touch_text">Delete</h4>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='/'"><i>/</i>
+				<span class="touch" id="/" onclick="calc.txt.value+='/'"><i>/</i>
 					<h4 class="touch_text">Divided</h4>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='*'"><i>x</i>
+				<span class="touch" id="*" onclick="calc.txt.value+='*'"><i>x</i>
 					<h4 class="touch_text">Multiply</h4>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='7'"><i>7</i>
+				<span class="touch" id="7" onclick="calc.txt.value+='7'"><i>7</i>
 					<h4 class="touch_text">Seven</h4>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='8'"><i>8</i>
+				<span class="touch" id="8" onclick="calc.txt.value+='8'"><i>8</i>
 					<h4 class="touch_text">Eight</h4>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='9'"><i>9</i>
+				<span class="touch" id="9" onclick="calc.txt.value+='9'"><i>9</i>
 					<h4 class="touch_text">Nine</h4>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='-'"><i>-</i>
+				<span class="touch" id="-" onclick="calc.txt.value+='-'"><i>-</i>
 					<h4 class="touch_text">Minus</h4>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='4'"><i>4</i>
+				<span class="touch" id="4" onclick="calc.txt.value+='4'"><i>4</i>
 					<h4 class="touch_text">Four</h4>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='5'"><i>5</i>
+				<span class="touch" id="5" onclick="calc.txt.value+='5'"><i>5</i>
 					<h4 class="touch_text">Five</h4>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='6'"><i>6</i>
+				<span class="touch" id="6" onclick="calc.txt.value+='6'"><i>6</i>
 					<h4 class="touch_text">Six</h4>
 				</span>
 				<span class="touch" id="plus" onclick="calc.txt.value+='+'"><i>+</i>
 					<h4 class="touch_text">Plus</h4>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='1'"><i>1</i>
+				<span class="touch" id="1" onclick="calc.txt.value+='1'"><i>1</i>
 					<h4 class="touch_text">One</h4>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='2'"><i>2</i>
+				<span class="touch" id="2" onclick="calc.txt.value+='2'"><i>2</i>
 					<h4 class="touch_text">Two</h4>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='3'"><i>3</i>
+				<span class="touch" id="3" onclick="calc.txt.value+='3'"><i>3</i>
 					<h4 class="touch_text">Three</h4>
 				</span>
 				<span class="touch" id="equal" onclick="document.calc.txt.value=eval(calc.txt.value)"><i>=</i>
 					<h4 class="touch_text">Equal</h4>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='0'"><i>0</i>
+				<span class="touch" id="0" onclick="calc.txt.value+='0'"><i>0</i>
 					<h4 class="touch_text">Zero</h4>
 				</span>
 				<span class="touch" id="container_brackets">
@@ -105,28 +105,31 @@
 						<span class="bracket" onclick="calc.txt.value+=')'"><i>)</i></span>
 					</div>
 				</span>
-				<span class="touch" onclick="calc.txt.value+='.'"><i>.</i>
+				<span class="touch" id="." onclick="calc.txt.value+='.'"><i>.</i>
 					<h4 class="touch_text">Point</h4>
 				</span>
 			</form>
 		</section>
 		<section class="disabled" id="converter">
-			<div class="input">
-				<input type="text" id="pxInput">
-				<span>px</span>
-			</div>
-			<div class="input">
-				<input type="text" id="remInput">
-				<span>rem|em</span>
-			</div>
-			<div class="input">
-				<input type="text" id="percentInput">
-				<span>%</span>
+			<div id="container_converter">
+				<div class="converter_content">
+					<input type="text" maxlength="10" id="pxInput">
+					<span>px</span>
+				</div>
+				<div class="converter_content">
+					<input type="text" maxlength="10" id="remInput">
+					<span>rem|em</span>
+				</div>
+				<div class="converter_content">
+					<input type="text" maxlength="10" id="percentInput">
+					<span>%</span>
+				</div>
 			</div>
 		</section>
 	</section>
 </body>
 
+<script src="/js/main.js"></script>
 <script src="/js/theme.js"></script>
 <script src="/js/animation.js"></script>
 <script src="/js/anime-master/lib/anime.min.js"></script>
