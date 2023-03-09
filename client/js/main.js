@@ -1,26 +1,58 @@
 /*=============== ENABLED DISABLED ===============*/
 
-const calculatorBtn = document.getElementById('calculator_btn');
-const converterBtn = document.getElementById('converter_btn');
 const calculator = document.getElementById('calculator');
+const calculatorBtn = document.getElementById('calculator_btn');
+const calculatorTitle = document.getElementById('calculator_title');
+const currency = document.getElementById('currency');
+const currencyBtn = document.getElementById('currency_btn');
+const currencyTitle = document.getElementById('currency_title');
 const converter = document.getElementById('converter');
+const converterBtn = document.getElementById('converter_btn');
+const converterTitle = document.getElementById('converter_title');
 
 calculatorBtn.addEventListener('click', function () {
-    converterBtn.style.transform = 'translateX(0)';
-    calculatorBtn.style.transform = 'translateX(50px)';
     calculator.classList.remove('disabled');
     calculator.classList.add('enabled');
+    calculatorTitle.classList.remove('disabled');
+    calculatorTitle.classList.add('enabled');
+    currency.classList.remove('enabled');
+    currency.classList.add('disabled');
+    currencyTitle.classList.remove('enabled');
+    currencyTitle.classList.add('disabled');
     converter.classList.remove('enabled');
     converter.classList.add('disabled');
+    converterTitle.classList.remove('enabled');
+    converterTitle.classList.add('disabled');
+});
+
+currencyBtn.addEventListener('click', function () {
+    currency.classList.remove('disabled');
+    currency.classList.add('enabled');
+    currencyTitle.classList.remove('disabled');
+    currencyTitle.classList.add('enabled');
+    calculator.classList.remove('enabled');
+    calculator.classList.add('disabled');
+    calculatorTitle.classList.remove('enabled');
+    calculatorTitle.classList.add('disabled');
+    converter.classList.remove('enabled');
+    converter.classList.add('disabled');
+    converterTitle.classList.remove('enabled');
+    converterTitle.classList.add('disabled');
 });
 
 converterBtn.addEventListener('click', function () {
-    calculatorBtn.style.transform = 'translateX(0px)';
-    converterBtn.style.transform = 'translateX(50px)';
     converter.classList.remove('disabled');
     converter.classList.add('enabled');
+    converterTitle.classList.remove('disabled');
+    converterTitle.classList.add('enabled');
     calculator.classList.remove('enabled');
     calculator.classList.add('disabled');
+    calculatorTitle.classList.remove('enabled');
+    calculatorTitle.classList.add('disabled');
+    currency.classList.remove('enabled');
+    currency.classList.add('disabled');
+    currencyTitle.classList.remove('enabled');
+    currencyTitle.classList.add('disabled');
 });
 
 /*=============== CALCULATOR ===============*/
@@ -112,3 +144,42 @@ percentInput.addEventListener('input', function () {
         remInput.value = '';
     }
 });
+
+//Définition des éléments HTML
+const amountInput = document.getElementById("amount");
+const fromSelect = document.getElementById("from");
+const toSelect = document.getElementById("to");
+const convertButton = document.getElementById("convert");
+const resultElement = document.getElementById("result");
+
+//Requête à l'API de taux de change pour récupérer les taux de change actuels
+fetch("https://openexchangerates.org/api/latest.json?app_id=8f29d912a81a4072a60c1c2c8ded2ac0")
+    .then(response => response.json())
+    .then(data => {
+        //Récupération des taux de change
+        const rates = data.rates;
+
+        //Écouteur d'événement pour le bouton de conversion
+        convertButton.addEventListener("click", () => {
+            //Récupération des valeurs des éléments HTML
+            const amount = Number(amountInput.value);
+            const from = fromSelect.value;
+            const to = toSelect.value;
+
+            //Récupération du taux de change pour la devise de départ
+            const fromRate = rates[from];
+
+            //Récupération du taux de change pour la devise d'arrivée
+            const toRate = rates[to];
+
+            //Calcul de la conversion
+            const result = (amount / fromRate) * toRate;
+
+            //Affichage du résultat
+            resultElement.textContent = `${result.toFixed(2)} ${to}`;
+        });
+    })
+    .catch(error => {
+        console.error(error);
+        resultElement.textContent = "Une erreur est survenue lors de la récupération des taux de change.";
+    });

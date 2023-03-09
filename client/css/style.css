@@ -32,12 +32,21 @@ body {
 
 /*=============== ENABLED DISABLED ===============*/
 
+#calculator_title.enabled,
+#currency_title.enabled,
+#converter_title.enabled,
 #calculator.enabled,
-#converter.enabled {
+#currency.enabled,
+#converter.enabled
+ {
   display: flex;
 }
 
+#calculator_title.disabled,
+#currency_title.disabled,
+#converter_title.disabled,
 #calculator.disabled,
+#currency.disabled,
 #converter.disabled {
   display: none;
 }
@@ -57,15 +66,38 @@ header {
   transition: 0.5s;
 }
 
-#text_anime h1 {
+#calculator_title,
+#currency_title,
+#converter_title {
+  z-index: 10;
+}
+
+#calculator_title h1,
+#currency_title h1,
+#converter_title h1 {
   display: inline-flex;
-  font-size: 4em;
+  font-size: 3em;
   transform-style: preserve-3d;
 }
 
-#text_anime h1 span {
+#calculator_title h1 span,
+#currency_title h1 span,
+#converter_title h1 span {
   pointer-events: none;
   transition: 0.5s;
+}
+
+/*=============== APP ===============*/
+
+#app {
+  display: flex;
+  height: 100vh;
+}
+
+#calculator,
+#currency,
+#converter {
+  margin: auto;
 }
 
 /*=============== NAV ===============*/
@@ -73,7 +105,7 @@ header {
 nav {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
   width: 180px;
@@ -95,36 +127,62 @@ nav::before {
   z-index: 1;
 }
 
-#calculator_btn,
-#converter_btn {
-  width: 100%;
-  height: 20%;
-  margin: 1rem;
-  border-top-left-radius: 60%;
-  border-bottom-left-radius: 60%;
+.nav_btn  {
+  position: relative;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
   background-color: #3c3158;
   color: #f1e3d3;
+  font-size: 0.875rem;
+  font-weight: bold;
   cursor: pointer;
   transition: 0.5s;
   z-index: 1;
 }
 
-#calculator_btn {
-  transform: translate(50px);
+.nav_btn:hover {
+  transform: translateX(20px);
 }
 
-/*=============== APP ===============*/
-
-#app {
+#social_container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
+  flex-direction: column;
+  justify-content: end;
+  height: 20%;
 }
 
-#calculator,
-#converter {
-  margin: auto;
+#linkedin_btn,
+#mail_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin: 1rem;
+  border-radius: 1rem;
+  background-color: #3c3158;
+  text-decoration: none;
+  font-size: 2.125em;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#linkedin_btn {
+  color: #009dfe;
+}
+
+#linkedin_btn:hover {
+  box-shadow: 0 -1px 4px, rgb(0, 217, 255) 0 -2px 10px, #4390ef 0 -10px 20px,
+    rgba(38, 66, 227, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#mail_btn {
+  color: #f52617;
+}
+
+#mail_btn:hover {
+  box-shadow: 0 -1px 4px, rgb(255, 53, 53) 0 -2px 10px, #bb1203 0 -10px 20px,
+    rgba(160, 4, 4, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 /*=============== CALCULATOR ===============*/
@@ -284,7 +342,7 @@ nav::before {
 
 /*=============== CONVERTER ===============*/
 
-#container_converter {
+.converter_container {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -318,10 +376,6 @@ nav::before {
   header {
     width: 100%;
     border-radius: 0;
-  }
-
-  #text_anime h1 {
-    font-size: 2em;
   }
 
   nav {

@@ -9,15 +9,22 @@ const sr = ScrollReveal({
 
 sr.reveal(`.top`, { delay: 500, origin: 'top', interval: 200 });
 sr.reveal(`.bottom`, { delay: 500, origin: 'bottom', interval: 200 });
-sr.reveal(`.right`, { delay: 700, origin: 'right' });
+sr.reveal(`.right`, { delay: 700, origin: 'right', interval: 200 });
+sr.reveal(`.left`, { delay: 700, origin: 'left', interval: 200 });
 
 /*=============== ANIME TEXT ===============*/
 
-const title = document.querySelector('h1');
-const letters = [...document.querySelectorAll('h1 span')]
+const titleCalculator = document.getElementById('calculator_title_text');
+const titleCurrency = document.getElementById('currency_title_text');
+const titleConverter = document.getElementById('converter_title_text');
+const letters = [...document.querySelectorAll('h1 span')];
 
-title.addEventListener('mouseenter', handleLetters);
-title.addEventListener('mouseleave', handleLetters);
+titleCalculator.addEventListener('mouseenter', handleLetters);
+titleCalculator.addEventListener('mouseleave', handleLetters);
+titleCurrency.addEventListener('mouseenter', handleLetters);
+titleCurrency.addEventListener('mouseleave', handleLetters);
+titleConverter.addEventListener('mouseenter', handleLetters);
+titleConverter.addEventListener('mouseleave', handleLetters);
 
 let isAnimatingIn = false;
 let calledOut = false;

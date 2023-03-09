@@ -17,8 +17,12 @@
   animation: sun 5s infinite linear;
 }
 
+.light_shadow {
+  box-shadow: 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
 #light_btn:hover {
-  box-shadow: #f1e3d3 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+  box-shadow: 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 #forest_btn {
@@ -26,8 +30,12 @@
   animation: forest 5s infinite linear;
 }
 
+.forest_shadow {
+  box-shadow: 0 -1px 4px, rgb(38, 202, 1) 0 -2px 10px, #99ef71 0 -10px 20px, rgba(0, 183, 22, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
 #forest_btn:hover {
-  box-shadow: #f1e3d3 0 -1px 4px, rgb(38, 202, 1) 0 -2px 10px, #99ef71 0 -10px 20px, rgba(0, 183, 22, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+  box-shadow: 0 -1px 4px, rgb(38, 202, 1) 0 -2px 10px, #99ef71 0 -10px 20px, rgba(0, 183, 22, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 #dark_btn {
@@ -35,8 +43,12 @@
   animation: moon 5s infinite linear;
 }
 
+.dark_shadow {
+  box-shadow: 0 -1px 4px, rgb(102, 99, 105) 0 -2px 10px, #6652cf 0 -10px 20px, rgba(70, 59, 226, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
 #dark_btn:hover {
-  box-shadow: #f1e3d3 0 -1px 4px, rgb(177, 176, 178) 0 -2px 10px, #afafaf 0 -10px 20px, rgba(70, 59, 226, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+  box-shadow: 0 -1px 4px, rgb(102, 99, 105) 0 -2px 10px, #6652cf 0 -10px 20px, rgba(70, 59, 226, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 /*=============== LIGHT MODE ===============*/
@@ -61,7 +73,9 @@ body.light .theme_btn {
   background-color: #f2d0a9;
 }
 
-body.light #text_anime h1 {
+body.light #calculator_title,
+body.light #currency_title,
+body.light #converter_title {
   color: #333;
 }
 
@@ -73,10 +87,14 @@ body.light nav::before {
   background-color: #f2d0a9;
 }
 
-body.light #calculator_btn,
-body.light #converter_btn {
+body.light .nav_btn {
   background-color: #f2d0a9;
   color: #333;
+}
+
+body.light #linkedin_btn,
+body.light #mail_btn {
+  background-color: #f2d0a9;
 }
 
 body.light #container_calculator {
@@ -103,10 +121,12 @@ body.light #separation {
 
 body.light .converter_content {
   background-color: #d88c9a;
+  color: #333;
 }
 
 body.light .converter_content input {
   background-color: #d88c9a;
+  color: #333;
 }
 
 /*=============== FOREST MODE ===============*/
@@ -131,8 +151,12 @@ body.forest nav::before {
   background-color: #99c1b9;
 }
 
-body.forest #calculator_btn,
-body.forest #converter_btn {
+body.forest .nav_btn {
+  background-color: #99c1b9;
+}
+
+body.forest #linkedin_btn,
+body.forest #mail_btn {
   background-color: #99c1b9;
 }
 
