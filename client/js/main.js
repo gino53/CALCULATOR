@@ -67,6 +67,53 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
+/*=============== CURRENCY ===============*/
+
+const amountInput = document.getElementById("amount");
+const fromSelect = document.getElementById("from");
+const toSelect = document.getElementById("to");
+const convertButton = document.getElementById("convert");
+const resultElement = document.getElementById("result");
+
+fetch("https://openexchangerates.org/api/latest.json?app_id=8f29d912a81a4072a60c1c2c8ded2ac0")
+  .then(response => response.json())
+  .then(data => {
+    const rates = data.rates;
+
+    function convertCurrency() {
+      const amount = Number(amountInput.value);
+      const from = fromSelect.value;
+      const to = toSelect.value;
+
+      if (!amount) {
+        resultElement.textContent = "Please enter a amount";
+        return;
+      }
+
+      if (!from || !to || !rates[from] || !rates[to]) {
+        resultElement.textContent = "Please select currencies.";
+        return;
+      }
+
+      const fromRate = rates[from];
+      const toRate = rates[to];
+
+      const result = (amount / fromRate) * toRate;
+
+      resultElement.textContent = `${result.toFixed(2)} ${to}`;
+    }
+
+    amountInput.addEventListener('input', convertCurrency);
+    fromSelect.addEventListener('change', convertCurrency);
+    toSelect.addEventListener('change', convertCurrency);
+
+    convertCurrency();
+  })
+  .catch(error => {
+    console.error(error);
+    resultElement.textContent = "Une erreur est survenue lors de la récupération des taux de change.";
+  });
+
 /*=============== CONVERTER ===============*/
 
 const pxInput = document.getElementById('pxInput');
@@ -144,42 +191,3 @@ percentInput.addEventListener('input', function () {
         remInput.value = '';
     }
 });
-
-//Définition des éléments HTML
-const amountInput = document.getElementById("amount");
-const fromSelect = document.getElementById("from");
-const toSelect = document.getElementById("to");
-const convertButton = document.getElementById("convert");
-const resultElement = document.getElementById("result");
-
-//Requête à l'API de taux de change pour récupérer les taux de change actuels
-fetch("https://openexchangerates.org/api/latest.json?app_id=8f29d912a81a4072a60c1c2c8ded2ac0")
-    .then(response => response.json())
-    .then(data => {
-        //Récupération des taux de change
-        const rates = data.rates;
-
-        //Écouteur d'événement pour le bouton de conversion
-        convertButton.addEventListener("click", () => {
-            //Récupération des valeurs des éléments HTML
-            const amount = Number(amountInput.value);
-            const from = fromSelect.value;
-            const to = toSelect.value;
-
-            //Récupération du taux de change pour la devise de départ
-            const fromRate = rates[from];
-
-            //Récupération du taux de change pour la devise d'arrivée
-            const toRate = rates[to];
-
-            //Calcul de la conversion
-            const result = (amount / fromRate) * toRate;
-
-            //Affichage du résultat
-            resultElement.textContent = `${result.toFixed(2)} ${to}`;
-        });
-    })
-    .catch(error => {
-        console.error(error);
-        resultElement.textContent = "Une erreur est survenue lors de la récupération des taux de change.";
-    });

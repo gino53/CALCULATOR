@@ -340,9 +340,57 @@ nav::before {
   transition-delay: 0.5s;
 }
 
+/*=============== CURRENCY ===============*/
+
+#currency_container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#amount,
+#from,
+#to {
+  position: relative;
+  padding: 1rem;
+  padding-right: 0;
+  border-radius: 0.625rem;
+  background-color: #8e7dbe;
+  color: #f1e3d3;
+  font-size: 1em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+#from,
+#to {
+  cursor: pointer;
+}
+
+select::-webkit-scrollbar {
+  width: 12px;
+}
+
+select::-webkit-scrollbar-thumb {
+  border: 3px solid #8e7dbe;
+  border-radius: 0.75rem;
+  background-color: #f1e3d3;
+}
+
+select::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+#result {
+  text-align: center;
+}
+
 /*=============== CONVERTER ===============*/
 
-.converter_container {
+#converter_container {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -351,7 +399,7 @@ nav::before {
 .converter_content {
   position: relative;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   background-color: #8e7dbe;
   color: #f1e3d3;
   text-align: right;
