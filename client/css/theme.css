@@ -119,6 +119,22 @@ body.light #separation {
   background-color: #333;
 }
 
+body.light #currency_container {
+  color: #333;
+}
+
+body.light #amount,
+body.light #from,
+body.light #to {
+  background-color: #d88c9a;
+  color: #333;
+}
+
+body.light select::-webkit-scrollbar-thumb {
+  border: 3px solid #d88c9a;
+  background-color: #f2d0a9;
+}
+
 body.light .converter_content {
   background-color: #d88c9a;
   color: #333;
@@ -162,6 +178,17 @@ body.forest #mail_btn {
 
 body.forest #container_calculator {
   background-color: #2e7125;
+}
+
+body.forest #amount,
+body.forest #from,
+body.forest #to {
+  background-color: #2e7125;
+}
+
+body.forest select::-webkit-scrollbar-thumb {
+  border: 3px solid #2e7125;
+  background-color: #99c1b9;
 }
 
 body.forest .converter_content {

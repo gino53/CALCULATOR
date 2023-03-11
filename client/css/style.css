@@ -346,6 +346,7 @@ nav::before {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  transition: 0.5s;
 }
 
 #amount,
@@ -353,11 +354,11 @@ nav::before {
 #to {
   position: relative;
   padding: 1rem;
-  padding-right: 0;
   border-radius: 0.625rem;
   background-color: #8e7dbe;
   color: #f1e3d3;
   font-size: 1em;
+  transition: 0.5s;
 }
 
 input::-webkit-outer-spin-button,
@@ -377,7 +378,8 @@ select::-webkit-scrollbar {
 select::-webkit-scrollbar-thumb {
   border: 3px solid #8e7dbe;
   border-radius: 0.75rem;
-  background-color: #f1e3d3;
+  background-color: #3c3158;
+  transition: 0.5s;
 }
 
 select::-webkit-scrollbar-track {
@@ -402,20 +404,23 @@ select::-webkit-scrollbar-track {
   border-radius: 0.625rem;
   background-color: #8e7dbe;
   color: #f1e3d3;
-  text-align: right;
-  font-size: 2em;
+  font-size: 1em;
+  transition: 0.5s;
 }
 
 .converter_content input {
+  width: 407px;
   background-color: #8e7dbe;
   color: #f1e3d3;
   font-size: 1em;
+  transition: 0.5s;
 }
 
 .converter_content span {
   position: absolute;
   right: 1rem;
   vertical-align: middle;
+  transition: 0.5s;
 }
 
 /*=============== MEDIA SCREEN ===============*/
