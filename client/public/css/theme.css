@@ -92,6 +92,10 @@ body.light .nav_btn {
   color: #333;
 }
 
+body.light #contact {
+  color: #333;
+}
+
 body.light #linkedin_btn,
 body.light #mail_btn {
   background-color: #f2d0a9;
