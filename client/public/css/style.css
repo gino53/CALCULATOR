@@ -10,7 +10,6 @@
   outline: 0;
   font-family: "Nunito", sans-serif;
   font-weight: bolder;
-  user-select: none;
 }
 
 body {
@@ -35,19 +34,22 @@ body {
 #calculator_title.enabled,
 #currency_title.enabled,
 #converter_title.enabled,
+#contact_title.enabled,
 #calculator.enabled,
 #currency.enabled,
-#converter.enabled
- {
+#converter.enabled,
+#contact.enabled {
   display: flex;
 }
 
 #calculator_title.disabled,
 #currency_title.disabled,
 #converter_title.disabled,
+#contact_title.disabled,
 #calculator.disabled,
 #currency.disabled,
-#converter.disabled {
+#converter.disabled,
+#contact.disabled {
   display: none;
 }
 
@@ -68,13 +70,15 @@ header {
 
 #calculator_title,
 #currency_title,
-#converter_title {
+#converter_title,
+#contact_title {
   z-index: 10;
 }
 
 #calculator_title h1,
 #currency_title h1,
-#converter_title h1 {
+#converter_title h1,
+#contact_title h1 {
   display: inline-flex;
   font-size: 3em;
   transform-style: preserve-3d;
@@ -82,7 +86,8 @@ header {
 
 #calculator_title h1 span,
 #currency_title h1 span,
-#converter_title h1 span {
+#converter_title h1 span,
+#contact_title h1 span {
   pointer-events: none;
   transition: 0.5s;
 }
@@ -96,7 +101,8 @@ header {
 
 #calculator,
 #currency,
-#converter {
+#converter,
+#contact {
   margin: auto;
 }
 
@@ -127,9 +133,9 @@ nav::before {
   z-index: 1;
 }
 
-.nav_btn  {
-  position: relative;
-  padding: 1rem 3rem;
+.nav_btn {
+  width: 100%;
+  padding: 1rem;
   border-radius: 1rem;
   background-color: #3c3158;
   color: #f1e3d3;
@@ -142,52 +148,6 @@ nav::before {
 
 .nav_btn:hover {
   transform: translateX(20px);
-}
-
-#social_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  height: 20%;
-}
-
-#contact {
-  text-align: center;
-  transition: 0.5s;
-}
-
-#linkedin_btn,
-#mail_btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  margin: 1rem;
-  border-radius: 1rem;
-  background-color: #3c3158;
-  text-decoration: none;
-  font-size: 2.125em;
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-#linkedin_btn {
-  color: #009dfe;
-}
-
-#linkedin_btn:hover {
-  box-shadow: 0 -1px 4px, rgb(0, 217, 255) 0 -2px 10px, #4390ef 0 -10px 20px,
-    rgba(38, 66, 227, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-}
-
-#mail_btn {
-  color: #f52617;
-}
-
-#mail_btn:hover {
-  box-shadow: 0 -1px 4px, rgb(255, 53, 53) 0 -2px 10px, #bb1203 0 -10px 20px,
-    rgba(160, 4, 4, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 /*=============== CALCULATOR ===============*/
@@ -428,6 +388,30 @@ select::-webkit-scrollbar-track {
   transition: 0.5s;
 }
 
+/*=============== CONTACT ===============*/
+
+#contact {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s;
+}
+
+#contact h2 {
+  margin-bottom: 20px;
+  border-bottom: 2px solid;
+}
+
+#contact a {
+  color: #f1e3d3;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+#contact a:hover {
+  color: #009dfe;
+}
+
 /*=============== MEDIA SCREEN ===============*/
 
 @media screen and (max-width: 1024px) {
@@ -437,6 +421,24 @@ select::-webkit-scrollbar-track {
   }
 
   nav {
-    width: 110px;
+    position: absolute;
+    bottom: 0;
+    flex-direction: row;
+    width: 100%;
+    height: 80px;
+  }
+
+  nav::before {
+    display: none;
+  }
+
+  .nav_btn {
+    height: 100%;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .nav_btn:hover {
+    transform: translateY(20px);
   }
 }

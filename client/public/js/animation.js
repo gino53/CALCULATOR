@@ -17,6 +17,7 @@ sr.reveal(`.left`, { delay: 700, origin: 'left', interval: 200 });
 const titleCalculator = document.getElementById('calculator_title_text');
 const titleCurrency = document.getElementById('currency_title_text');
 const titleConverter = document.getElementById('converter_title_text');
+const titleContact = document.getElementById('contact_title_text');
 const letters = [...document.querySelectorAll('h1 span')];
 
 titleCalculator.addEventListener('mouseenter', handleLetters);
@@ -25,6 +26,8 @@ titleCurrency.addEventListener('mouseenter', handleLetters);
 titleCurrency.addEventListener('mouseleave', handleLetters);
 titleConverter.addEventListener('mouseenter', handleLetters);
 titleConverter.addEventListener('mouseleave', handleLetters);
+titleContact.addEventListener('mouseenter', handleLetters);
+titleContact.addEventListener('mouseleave', handleLetters);
 
 let isAnimatingIn = false;
 let calledOut = false;

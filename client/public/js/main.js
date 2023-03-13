@@ -9,6 +9,9 @@ const currencyTitle = document.getElementById('currency_title');
 const converter = document.getElementById('converter');
 const converterBtn = document.getElementById('converter_btn');
 const converterTitle = document.getElementById('converter_title');
+const contact = document.getElementById('contact');
+const contactBtn = document.getElementById('contact_btn');
+const contactTitle = document.getElementById('contact_title');
 
 calculatorBtn.addEventListener('click', function () {
     calculator.classList.remove('disabled');
@@ -23,6 +26,10 @@ calculatorBtn.addEventListener('click', function () {
     converter.classList.add('disabled');
     converterTitle.classList.remove('enabled');
     converterTitle.classList.add('disabled');
+    contact.classList.remove('enabled');
+    contact.classList.add('disabled');
+    contactTitle.classList.remove('enabled');
+    contactTitle.classList.add('disabled');
 });
 
 currencyBtn.addEventListener('click', function () {
@@ -38,6 +45,10 @@ currencyBtn.addEventListener('click', function () {
     converter.classList.add('disabled');
     converterTitle.classList.remove('enabled');
     converterTitle.classList.add('disabled');
+    contact.classList.remove('enabled');
+    contact.classList.add('disabled');
+    contactTitle.classList.remove('enabled');
+    contactTitle.classList.add('disabled');
 });
 
 converterBtn.addEventListener('click', function () {
@@ -53,6 +64,29 @@ converterBtn.addEventListener('click', function () {
     currency.classList.add('disabled');
     currencyTitle.classList.remove('enabled');
     currencyTitle.classList.add('disabled');
+    contact.classList.remove('enabled');
+    contact.classList.add('disabled');
+    contactTitle.classList.remove('enabled');
+    contactTitle.classList.add('disabled');
+});
+
+contactBtn.addEventListener('click', function () {
+    contact.classList.remove('disabled');
+    contact.classList.add('enabled');
+    contactTitle.classList.remove('disabled');
+    contactTitle.classList.add('enabled');
+    calculator.classList.remove('enabled');
+    calculator.classList.add('disabled');
+    calculatorTitle.classList.remove('enabled');
+    calculatorTitle.classList.add('disabled');
+    currency.classList.remove('enabled');
+    currency.classList.add('disabled');
+    currencyTitle.classList.remove('enabled');
+    currencyTitle.classList.add('disabled');
+    converter.classList.remove('enabled');
+    converter.classList.add('disabled');
+    converterTitle.classList.remove('enabled');
+    converterTitle.classList.add('disabled');
 });
 
 /*=============== CALCULATOR ===============*/
@@ -76,43 +110,43 @@ const convertButton = document.getElementById("convert");
 const resultElement = document.getElementById("result");
 
 fetch("https://openexchangerates.org/api/latest.json?app_id=8f29d912a81a4072a60c1c2c8ded2ac0")
-  .then(response => response.json())
-  .then(data => {
-    const rates = data.rates;
+    .then(response => response.json())
+    .then(data => {
+        const rates = data.rates;
 
-    function convertCurrency() {
-      const amount = Number(amountInput.value);
-      const from = fromSelect.value;
-      const to = toSelect.value;
+        function convertCurrency() {
+            const amount = Number(amountInput.value);
+            const from = fromSelect.value;
+            const to = toSelect.value;
 
-      if (!amount) {
-        resultElement.textContent = "Please enter a amount";
-        return;
-      }
+            if (!amount) {
+                resultElement.textContent = "Please enter a amount";
+                return;
+            }
 
-      if (!from || !to || !rates[from] || !rates[to]) {
-        resultElement.textContent = "Please select currencies.";
-        return;
-      }
+            if (!from || !to || !rates[from] || !rates[to]) {
+                resultElement.textContent = "Please select currencies.";
+                return;
+            }
 
-      const fromRate = rates[from];
-      const toRate = rates[to];
+            const fromRate = rates[from];
+            const toRate = rates[to];
 
-      const result = (amount / fromRate) * toRate;
+            const result = (amount / fromRate) * toRate;
 
-      resultElement.textContent = `${result.toFixed(2)} ${to}`;
-    }
+            resultElement.textContent = `${result.toFixed(2)} ${to}`;
+        }
 
-    amountInput.addEventListener('input', convertCurrency);
-    fromSelect.addEventListener('change', convertCurrency);
-    toSelect.addEventListener('change', convertCurrency);
+        amountInput.addEventListener('input', convertCurrency);
+        fromSelect.addEventListener('change', convertCurrency);
+        toSelect.addEventListener('change', convertCurrency);
 
-    convertCurrency();
-  })
-  .catch(error => {
-    console.error(error);
-    resultElement.textContent = "Une erreur est survenue lors de la récupération des taux de change.";
-  });
+        convertCurrency();
+    })
+    .catch(error => {
+        console.error(error);
+        resultElement.textContent = "Une erreur est survenue lors de la récupération des taux de change.";
+    });
 
 /*=============== CONVERTER ===============*/
 

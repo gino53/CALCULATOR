@@ -18,11 +18,13 @@
 }
 
 .light_shadow {
-  box-shadow: 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+  box-shadow: 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px,
+    red 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 #light_btn:hover {
-  box-shadow: 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+  box-shadow: 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px,
+    red 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 #forest_btn {
@@ -31,11 +33,13 @@
 }
 
 .forest_shadow {
-  box-shadow: 0 -1px 4px, rgb(38, 202, 1) 0 -2px 10px, #99ef71 0 -10px 20px, rgba(0, 183, 22, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+  box-shadow: 0 -1px 4px, rgb(38, 202, 1) 0 -2px 10px, #99ef71 0 -10px 20px,
+    rgba(0, 183, 22, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 #forest_btn:hover {
-  box-shadow: 0 -1px 4px, rgb(38, 202, 1) 0 -2px 10px, #99ef71 0 -10px 20px, rgba(0, 183, 22, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+  box-shadow: 0 -1px 4px, rgb(38, 202, 1) 0 -2px 10px, #99ef71 0 -10px 20px,
+    rgba(0, 183, 22, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 #dark_btn {
@@ -44,11 +48,13 @@
 }
 
 .dark_shadow {
-  box-shadow: 0 -1px 4px, rgb(102, 99, 105) 0 -2px 10px, #6652cf 0 -10px 20px, rgba(70, 59, 226, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+  box-shadow: 0 -1px 4px, rgb(102, 99, 105) 0 -2px 10px, #6652cf 0 -10px 20px,
+    rgba(70, 59, 226, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 #dark_btn:hover {
-  box-shadow: 0 -1px 4px, rgb(102, 99, 105) 0 -2px 10px, #6652cf 0 -10px 20px, rgba(70, 59, 226, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+  box-shadow: 0 -1px 4px, rgb(102, 99, 105) 0 -2px 10px, #6652cf 0 -10px 20px,
+    rgba(70, 59, 226, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 /*=============== LIGHT MODE ===============*/
@@ -90,15 +96,6 @@ body.light nav::before {
 body.light .nav_btn {
   background-color: #f2d0a9;
   color: #333;
-}
-
-body.light #contact {
-  color: #333;
-}
-
-body.light #linkedin_btn,
-body.light #mail_btn {
-  background-color: #f2d0a9;
 }
 
 body.light #container_calculator {
@@ -147,6 +144,15 @@ body.light .converter_content {
 body.light .converter_content input {
   background-color: #d88c9a;
   color: #333;
+}
+
+body.light #contact,
+body.light #contact a {
+  color: #333;
+}
+
+body.light #contact a:hover {
+  color: #009dfe;
 }
 
 /*=============== FOREST MODE ===============*/
