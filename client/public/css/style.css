@@ -92,6 +92,65 @@ header {
   transition: 0.5s;
 }
 
+/*=============== THEME BTN ===============*/
+
+.theme_btn {
+  width: 42px;
+  height: 42px;
+  margin: 0.25rem;
+  padding-top: 0.25rem;
+  border-radius: 1rem;
+  background-color: #3c3158;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#light_btn {
+  color: #d88c9a;
+  animation: sun 5s infinite linear;
+}
+
+.light_shadow {
+  box-shadow: 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px,
+    red 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#light_btn:hover {
+  box-shadow: 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px,
+    red 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#forest_btn {
+  color: #2c6525b5;
+  animation: forest 5s infinite linear;
+}
+
+.forest_shadow {
+  box-shadow: 0 -1px 4px, rgb(38, 202, 1) 0 -2px 10px, #99ef71 0 -10px 20px,
+    rgba(0, 183, 22, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#forest_btn:hover {
+  box-shadow: 0 -1px 4px, rgb(38, 202, 1) 0 -2px 10px, #99ef71 0 -10px 20px,
+    rgba(0, 183, 22, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#dark_btn {
+  color: #b4abee;
+  animation: moon 5s infinite linear;
+}
+
+.dark_shadow {
+  box-shadow: 0 -1px 4px, rgb(102, 99, 105) 0 -2px 10px, #6652cf 0 -10px 20px,
+    rgba(70, 59, 226, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#dark_btn:hover {
+  box-shadow: 0 -1px 4px, rgb(102, 99, 105) 0 -2px 10px, #6652cf 0 -10px 20px,
+    rgba(70, 59, 226, 0.894) 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
 /*=============== APP ===============*/
 
 #app {
@@ -178,9 +237,9 @@ nav::before {
   margin-bottom: 1rem;
   padding: 0.625rem;
   border: none;
+  border-bottom: solid 2px #f1e3d3;
   outline: none;
   background: none;
-  box-shadow: 0 2px 0 0 #f1e3d3;
   color: #f1e3d3;
   text-align: right;
   font-size: 2em;
@@ -412,12 +471,75 @@ select::-webkit-scrollbar-track {
   color: #009dfe;
 }
 
+/*=============== ANIMATION ===============*/
+
+@keyframes sun {
+  10% {
+    color: #df1a00;
+  }
+
+  35% {
+    color: #d88c9a;
+  }
+
+  70% {
+    color: #df1a00;
+  }
+
+  100% {
+    color: #d88c9a;
+  }
+}
+
+@keyframes forest {
+  5% {
+    color: #04b849;
+  }
+
+  35% {
+    color: #2c6525b5;
+  }
+
+  70% {
+    color: #04b849;
+  }
+
+  99% {
+    color: #2c6525b5;
+  }
+}
+
+@keyframes moon {
+  5% {
+    color: #f0f0f0;
+  }
+
+  35% {
+    color: #b4abee;
+  }
+
+  70% {
+    color: #f0f0f0;
+  }
+
+  99% {
+    color: #b4abee;
+  }
+}
+
 /*=============== MEDIA SCREEN ===============*/
 
 @media screen and (max-width: 1024px) {
   header {
     width: 100%;
     border-radius: 0;
+  }
+
+  #calculator_title h1,
+  #currency_title h1,
+  #converter_title h1,
+  #contact_title h1 {
+    font-size: 2.5em;
   }
 
   nav {
