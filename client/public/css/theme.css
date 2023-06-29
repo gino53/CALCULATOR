@@ -22,7 +22,8 @@ body.light .theme_btn {
 
 body.light #calculator_title,
 body.light #currency_title,
-body.light #converter_title {
+body.light #converter_title,
+body.light #contact_title {
   color: #333;
 }
 
@@ -75,6 +76,10 @@ body.light #to {
 body.light select::-webkit-scrollbar-thumb {
   border: 3px solid #d88c9a;
   background-color: #f2d0a9;
+}
+
+body.light #converter_ref {
+  color: #333;
 }
 
 body.light .converter_content {
